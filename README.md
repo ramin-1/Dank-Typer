@@ -9,11 +9,12 @@ If you're a Danker looking to use this script, there are a few steps.
 - Extract the files in your file explorer and move the file to your desktop for easy access.
 3. To run the program, you need to now open a terminal/command prompt(Just search for it on your computer).
 4. Inside the terminal type in "cd desktop/dank-typer-master" without the quotation marks, then hit enter. If you saved the folder in any place other than you desktop type "cd" followed by the path of where the folder is saved.
-5. Then type in python3 -i dankxpgenerator.py
+5. Type in pip install pynput and wait for the pynput library to be installed.
+6. Then type in python3 -i dankxpgenerator.py
 - If you get this error('python3' is not recognized as an internal or external command, operable program or batch file.) when doing step 5, try replacing "python3" with "python"
-6. Make sure you have a discord window open to the channel where you will be running Dank Memer commands and click into the text box, because once you type in the command in step 5 the program begins in 5 seconds. 
-7. Make sure you have enough laptops(10 should be enough if you run it all night) and cookies(2500) before running the script for long periods of time.
-8. While running this program you unfortunately won't be able to do anything else on your computer.
+7. Make sure you have a discord window open to the channel where you will be running Dank Memer commands and click into the text box, because once you type in the command in step 8 the program begins in 5 seconds. 
+9. Make sure you have enough laptops(10 should be enough if you run it all night) and cookies(2500) before running the script for long periods of time.
+10. While running this program you unfortunately won't be able to do anything else on your computer.
 
 What Does This Script Do?
 - Runs beg, pm, gamble, slots, and sell cookie commands in a random order
