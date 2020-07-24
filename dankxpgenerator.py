@@ -6,39 +6,70 @@ import math
 keyboard = Controller()
 time.sleep(5)
 
+def enter():
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
 
 def beg():
     keyboard.type('pls beg')
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    enter()
     time.sleep(random.randint(2, 5))
 
 
 def gamble():
     keyboard.type('pls gamble 100')
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    enter()
     time.sleep(random.randint(2, 5))
 
 
 def slots():
     keyboard.type('pls slots 100')
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    enter()
     time.sleep(random.randint(2, 5))
 
 
 def cookie():
     keyboard.type('pls sell cookie')
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    enter()
+    time.sleep(random.randint(2, 5))
+    
+def buy():
+    keyboard.type('pls buy cookie')
+    enter()
     time.sleep(random.randint(2, 5))
 
+def trivia():
+    keyboard.type('pls trivia')
+    enter()
+    time.sleep(random.randint(1, 2))
+    trivia_num = random.randint(1,4)
+    if trivia_num == 1:
+        keyboard.type('A')
+    elif trivia_num == 2:
+        keyboard.type('B')
+    elif trivia_num == 3:
+        keyboard.type('C')
+    else: 
+        keyboard.type('D')
+    enter()
+    time.sleep(random.randint(2, 5))
+
+def use():
+    keyboard.type('pls use cookie')
+    enter()
+    time.sleep(random.randint(2, 5))
+
+def scout():
+    keyboard.type('pls scout')
+    enter()
+    time.sleep(random.randint(1, 2))
+    keyboard.type('tree')
+    enter()
+    time.sleep(random.randint(2, 5))
 
 def pm():
     keyboard.type('pls pm')
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    enter()
     time.sleep(random.randint(1, 3))
     num = random.randint(1, 4)
     if num == 1:
@@ -53,9 +84,14 @@ def pm():
     else:
         keyboard.press('e')
         keyboard.release('e')
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    enter()
     time.sleep(random.randint(2, 5))
+
+def full_cookie():
+    cookie()
+    use()
+    buy()
+    time.sleep(random.randint(1, 2))
 
 
 phrases = ["damn", "coolio", "im rich af", "oop", "shiii", "dam it", "cmon man", "lol", "ripp",
@@ -66,8 +102,7 @@ phrases = ["damn", "coolio", "im rich af", "oop", "shiii", "dam it", "cmon man",
 def phrase():
     phrase_num = random.randint(0, (len(phrases)-1))
     keyboard.type(phrases[phrase_num])
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
+    enter()
 
 
 x = 0
@@ -75,70 +110,97 @@ cook_buy = random.randint(90, 110)
 while x < 1000000:
     num = random.randint(1, 7)
     if num == 1:
+        use()
+        trivia()
         cookie()
         slots()
-        cookie()
+        scout()
+        slots()
         gamble()
         cookie()
         pm()
-        cookie()
+        buy()
         beg()
-        cookie()
+        use()
     elif num == 2:
-        cookie()
+        trivia()
+        use()
         gamble()
-        cookie()
+        buy()
         slots()
+        use()
+        scout()
         cookie()
         pm()
-        cookie()
+        buy()
         beg()
-        cookie()
+        use()
     elif num == 3:
+        slots()
         pm()
+        trivia()
         cookie()
         gamble()
-        cookie()
+        buy()
+        scout()
         beg()
-        cookie()
+        use()
         slots()
-        cookie()
+        buy()
     elif num == 4:
+        gamble()
+        scout()
+        buy()
         slots()
         cookie()
         pm()
-        cookie()
+        buy()
         gamble()
+        use()
+        trivia()
         cookie()
         beg()
-        cookie()
+        buy()
     elif num == 5:
         cookie()
-        pm()
+        use()
+        scout()
         cookie()
+        pm()
+        buy()
         beg()
+        trivia()
+        cookie()
+        slots()
+        buy()
+        gamble()
+        buy()
+    elif num == 6:
+        buy()
+        pm()
         cookie()
         slots()
         gamble()
-        cookie()
-    elif num == 6:
-        cookie()
-        pm()
-        cookie()
-        slots()
+        trivia()
         beg()
-        cookie()
+        buy()
+        scout()
+        use()
         gamble()
         cookie()
     else:
         cookie()
         beg()
+        scout()
+        use()
         slots()
-        cookie()
+        buy()
         pm()
+        use()
+        trivia()
         cookie()
         gamble()
-        cookie()
+        buy()
     if x == cook_buy:
         cookie_num = random.randint(340, 360)
         keyboard.type(f'pls buy cookie {cookie_num}')
@@ -146,5 +208,7 @@ while x < 1000000:
         keyboard.release(Key.enter)
         cook_buy += random.randint(90, 110)
     phrase()
-    time.sleep(random.randint(7, 12))
+    time.sleep(random.randint(2, 5))
     x += 1
+    
+#No Selling
