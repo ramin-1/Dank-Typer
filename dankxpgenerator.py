@@ -55,7 +55,10 @@ def trivia():
     time.sleep(random.randint(2, 5))
 
 def use():
-    keyboard.type('pls use cookie')
+    keyboard.type('pls use pink')
+    enter()
+    time.sleep(random.randint(1, 2))
+    keyboard.type('g')
     enter()
     time.sleep(random.randint(2, 5))
 
